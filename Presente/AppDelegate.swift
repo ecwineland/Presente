@@ -8,15 +8,33 @@
 
 import UIKit
 
+// 1. Add the ESTBeaconManagerDelegate protocol
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate  {
+    
     var window: UIWindow?
-
-
+    
+    // 2. Add a property to hold the beacon manager and instantiate it
+    let beaconManager = ESTBeaconManager()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // 3. Set the beacon manager's delegate
+        self.beaconManager.delegate = self
+        self.beaconManager.requestAlwaysAuthorization()
+        self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
+            proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
+            major: 10190, minor: 37362, identifier: "monitored region"))
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(
+            UIUserNotificationSettings(forTypes: .Alert, categories: nil))
         return true
+    }
+    
+    func beaconManager(manager: AnyObject, didEnterRegion region: CLBeaconRegion) {
+        let notification = UILocalNotification()
+        notification.alertBody =
+            "It's good to see you!  You're checked off for attending today's class."
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
     }
 
     func applicationWillResignActive(application: UIApplication) {
