@@ -19,6 +19,9 @@
 		8C85AE191BCC495000DD3302 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE181BCC495000DD3302 /* SystemConfiguration.framework */; };
 		8C85AE1B1BCC496200DD3302 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE1A1BCC496200DD3302 /* libz.1.dylib */; };
 		8C85AE1D1BCC497800DD3302 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE1C1BCC497800DD3302 /* libsqlite3.dylib */; };
+		8C85AE1F1BCC4A3400DD3302 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE1E1BCC4A3400DD3302 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		8C85AE211BCC4A3C00DD3302 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE201BCC4A3C00DD3302 /* Social.framework */; };
+		8C85AE231BCC4A4500DD3302 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C85AE221BCC4A4500DD3302 /* Accounts.framework */; };
 		8CE683931BC62A050071BFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE683921BC62A050071BFF8 /* AppDelegate.swift */; };
 		8CE683951BC62A050071BFF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE683941BC62A050071BFF8 /* ViewController.swift */; };
 		8CE683981BC62A050071BFF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE683961BC62A050071BFF8 /* Main.storyboard */; };
@@ -62,6 +65,9 @@
 		8C85AE181BCC495000DD3302 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C85AE1A1BCC496200DD3302 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		8C85AE1C1BCC497800DD3302 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		8C85AE1E1BCC4A3400DD3302 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		8C85AE201BCC4A3C00DD3302 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8C85AE221BCC4A4500DD3302 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8CE6838F1BC62A050071BFF8 /* Presente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Presente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE683921BC62A050071BFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE683941BC62A050071BFF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C85AE231BCC4A4500DD3302 /* Accounts.framework in Frameworks */,
+				8C85AE211BCC4A3C00DD3302 /* Social.framework in Frameworks */,
 				8C85AE1D1BCC497800DD3302 /* libsqlite3.dylib in Frameworks */,
 				8C85AE1B1BCC496200DD3302 /* libz.1.dylib in Frameworks */,
 				8C85AE191BCC495000DD3302 /* SystemConfiguration.framework in Frameworks */,
@@ -167,6 +175,7 @@
 				8C85AE0B1BCC491500DD3302 /* AudioToolbox.framework in Frameworks */,
 				8C85AE081BCC48FA00DD3302 /* Bolts.framework in Frameworks */,
 				EBBD2295DFDE400C2F560A2C /* libPods-Presente.a in Frameworks */,
+				8C85AE1F1BCC4A3400DD3302 /* ParseUI.framework in Frameworks */,
 				8C85AE091BCC48FA00DD3302 /* Parse.framework in Frameworks */,
 				8CE684091BC62BC00071BFF8 /* EstimoteSDK.framework in Frameworks */,
 			);
@@ -192,6 +201,8 @@
 		78E3BD55CA908E22D0F134AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C85AE221BCC4A4500DD3302 /* Accounts.framework */,
+				8C85AE201BCC4A3C00DD3302 /* Social.framework */,
 				8C85AE1C1BCC497800DD3302 /* libsqlite3.dylib */,
 				8C85AE1A1BCC496200DD3302 /* libz.1.dylib */,
 				8C85AE181BCC495000DD3302 /* SystemConfiguration.framework */,
@@ -232,6 +243,7 @@
 		8CE683911BC62A050071BFF8 /* Presente */ = {
 			isa = PBXGroup;
 			children = (
+				8C85AE1E1BCC4A3400DD3302 /* ParseUI.framework */,
 				8C85AE061BCC48FA00DD3302 /* Bolts.framework */,
 				8C85AE071BCC48FA00DD3302 /* Parse.framework */,
 				8CE684081BC62BC00071BFF8 /* EstimoteSDK */,
