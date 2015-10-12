@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
+    var logInViewController: PFLogInViewController = PFLogInViewController()
+    var signUpViewController: PFSignUpViewController = PFSignUpViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +24,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Parse Log In
+    
+    
+    
+    
+    // MARK: Parse Sign Up
 
 
 }
