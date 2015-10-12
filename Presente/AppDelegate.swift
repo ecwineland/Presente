@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import Parse
 
-// 1. Add the ESTBeaconManagerDelegate protocol
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate  {
     
     var window: UIWindow?
     
-    // 2. Add a property to hold the beacon manager and instantiate it
     let beaconManager = ESTBeaconManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
