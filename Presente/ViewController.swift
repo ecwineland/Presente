@@ -80,5 +80,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         print("User dismissed signup")
     }
     
+    // Mark: Actions
+    
+    @IBAction func simpleAction(sender: AnyObject) {
+        self.presentViewController(self.logInViewController, animated: true, completion: nil)
+    }
+    
 }
 
