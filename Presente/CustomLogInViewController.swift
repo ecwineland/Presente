@@ -11,6 +11,9 @@ import UIKit
 
 class CustomLogInViewController: UIViewController {
 
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,5 +35,12 @@ class CustomLogInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Actions
+    
+    @IBAction func logInAction(sender: AnyObject) {
+    }
 
+    @IBAction func signUpAction(sender: AnyObject) {
+    }
 }

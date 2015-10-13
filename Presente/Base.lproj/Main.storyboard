@@ -78,6 +78,9 @@
                                     <constraint firstAttribute="width" constant="46" id="Vwe-g5-fre"/>
                                 </constraints>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logInAction:" destination="9NW-bF-o4H" eventType="touchUpInside" id="yMq-om-oIi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6u-Lw-IcC">
                                 <rect key="frame" x="264" y="334" width="58" height="30"/>
@@ -85,6 +88,9 @@
                                     <constraint firstAttribute="width" constant="58" id="HEe-1O-1vK"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpAction:" destination="9NW-bF-o4H" eventType="touchUpInside" id="aRX-VL-jiU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,6 +108,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordField" destination="F0T-Ni-G22" id="jtp-mz-K7b"/>
+                        <outlet property="usernameField" destination="bRa-3P-yWZ" id="a60-li-YyF"/>
                         <segue destination="LEw-fv-zx9" kind="show" identifier="signup" id="RLU-xU-WE7"/>
                     </connections>
                 </viewController>
@@ -139,10 +147,23 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT4-vq-zlB">
                                 <rect key="frame" x="272" y="263" width="56" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpAction:" destination="LEw-fv-zx9" eventType="touchUpInside" id="5tu-W4-Dfk"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-pl-tqs">
+                                <rect key="frame" x="24" y="92" width="553" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="BJU-pl-tqs" id="WmJ-ux-MoI"/>
+                        <outlet property="passwordField" destination="1XP-u9-y16" id="Yg9-TM-vZ4"/>
+                        <outlet property="usernameField" destination="mXT-Su-y35" id="2Cl-fc-lnE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtQ-Tu-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
