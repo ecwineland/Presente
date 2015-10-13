@@ -26,6 +26,21 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         if (PFUser.currentUser() == nil) {
             self.logInViewController.fields = PFLogInFields.UsernameAndPassword; PFLogInFields.LogInButton; PFLogInFields.SignUpButton; PFLogInFields.PasswordForgotten; PFLogInFields.DismissButton
             
+            // Log In Logo
+            let logoInTitle = UILabel()
+            logoInTitle.text = "Presente"
+            
+            self.logInViewController.logInView?.logo = logoInTitle
+            self.logInViewController.delegate = self
+            
+            // Sign Up Logo
+            let signUpTitle = UILabel()
+            signUpTitle.text = "Presente"
+            
+            self.signUpViewController.signUpView!.logo = signUpTitle
+            self.signUpViewController.delegate = self
+            
+            self.logInViewController.signUpController = self.signUpViewController
             
         }
     }
