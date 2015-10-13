@@ -19,6 +19,16 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+            
+        if (PFUser.currentUser() == nil) {
+            self.logInViewController.fields = PFLogInFields.UsernameAndPassword; PFLogInFields.LogInButton; PFLogInFields.SignUpButton; PFLogInFields.PasswordForgotten; PFLogInFields.DismissButton
+            
+            
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,10 +38,35 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     // MARK: Parse Log In
     
     
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+//        code
+    }
     
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+//        code
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        <#code#>
+    }
     
     // MARK: Parse Sign Up
 
-
+    func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
+        <#code#>
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        <#code#>
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        <#code#>
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        <#code#>
+    }
+    
 }
 
