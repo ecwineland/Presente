@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -98,7 +98,7 @@
         <!--Dashboard-->
         <scene sceneID="kro-iF-AK8">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" title="Dashboard" id="gLN-nj-zkg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" title="Dashboard" id="gLN-nj-zkg" customClass="UserDashboardViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nzo-sn-id9"/>
                         <viewControllerLayoutGuide type="bottom" id="eyX-Xm-R9A"/>
@@ -107,16 +107,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-Jf-RIV">
-                                <rect key="frame" x="139" y="246" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-Jf-RIV">
+                                <rect key="frame" x="118" y="136" width="85" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpo-M1-QMY">
+                                <rect key="frame" x="83" y="186" width="155" height="49"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rpo-M1-QMY" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="A2e-E8-COB"/>
+                            <constraint firstItem="gpX-Jf-RIV" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="cBK-nO-ejs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8qk-Mi-HFf"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Rpo-M1-QMY" id="Zud-ko-YJR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbT-za-faL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,6 +199,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QEp-2T-PtN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -11,12 +11,17 @@ import Parse
 
 class UserDashboardViewController: UIViewController {
     
-    var user : PFUser = PFUser() // User for whom info is displayed
+    @IBOutlet var nameLabel: UILabel!
+    
+    var user = PFUser() // User for whom info is displayed
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
+        print(user.username)
+        nameLabel.text = self.user.username
     }
 
     override func didReceiveMemoryWarning() {
