@@ -52,9 +52,33 @@ class CustomLogInViewController: UIViewController {
         
         // Check for minimum username and password length
         if (username.characters.count < 4 || password.characters.count < 5) {
-            let alert : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
+            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            presentViewController(alert, animated: true, completion: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        } else { //
+            
+            self.actInd.startAnimating()
+            
+            PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
+                
+                self.actInd.stopAnimating()
+                
+                if (user != nil) {
+                    // Log in success
+                    let alertController : UIAlertController = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
+                    
+                }
+                
+            })
+                
+                
             
         }
         
