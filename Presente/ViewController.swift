@@ -24,7 +24,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         super.viewDidAppear(animated)
             
         if (PFUser.currentUser() == nil) {
-            self.logInViewController.fields = PFLogInFields.UsernameAndPassword; PFLogInFields.LogInButton; PFLogInFields.SignUpButton; PFLogInFields.PasswordForgotten; PFLogInFields.DismissButton
+            self.logInViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton]
             
             // Log In Logo
             let logoInTitle = UILabel()

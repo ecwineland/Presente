@@ -17,22 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-Wy-8ls">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-Wy-8ls">
                                 <rect key="frame" x="274" y="156" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="IDB-kT-oDh"/>
+                                </constraints>
                                 <state key="normal" title="Simple"/>
                                 <connections>
                                     <action selector="simpleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YwL-pY-o5S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-EI-Osf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-EI-Osf">
                                 <rect key="frame" x="274" y="278" width="49" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yzl-kJ-Fv4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T42-eP-nhD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T42-eP-nhD">
                                 <rect key="frame" x="272" y="207" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="VoY-Ug-j8n"/>
+                                </constraints>
                                 <state key="normal" title="Custom"/>
                                 <connections>
                                     <action selector="customAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="otq-tP-ir8"/>
@@ -40,6 +46,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IYO-Wy-8ls" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="274" id="7WJ-gr-kaF"/>
+                            <constraint firstItem="IYO-Wy-8ls" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="BEP-DL-j0Q"/>
+                            <constraint firstItem="T42-eP-nhD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KRm-xx-pbH"/>
+                            <constraint firstItem="IYO-Wy-8ls" firstAttribute="trailing" secondItem="esN-EI-Osf" secondAttribute="trailing" id="a5P-lZ-Y2o"/>
+                            <constraint firstItem="IYO-Wy-8ls" firstAttribute="leading" secondItem="esN-EI-Osf" secondAttribute="leading" id="bh3-3q-glL"/>
+                            <constraint firstItem="esN-EI-Osf" firstAttribute="top" secondItem="T42-eP-nhD" secondAttribute="bottom" constant="41" id="smy-Et-XKy"/>
+                            <constraint firstItem="T42-eP-nhD" firstAttribute="top" secondItem="IYO-Wy-8ls" secondAttribute="bottom" constant="21" id="ved-je-Cnr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d8P-xO-d81"/>
                     <connections>
