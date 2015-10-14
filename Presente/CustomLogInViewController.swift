@@ -96,7 +96,7 @@ class CustomLogInViewController: UIViewController {
                         //                    userDashboardController.user = user!
                         
                         // Send to user dashboard
-                        self.navigationController?.pushViewController(dashboardController, animated: true)
+                        self.presentViewController(dashboardController, animated: true, completion: nil)
                     }
                 } else {
                     // Log in failure
