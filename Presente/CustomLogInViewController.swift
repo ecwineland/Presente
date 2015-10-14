@@ -107,4 +107,8 @@ class CustomLogInViewController: UIViewController {
     @IBAction func signUpAction(sender: AnyObject) {
         self.performSegueWithIdentifier("signup", sender: self)
     }
+    
+    @IBAction func signInAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("", sender: nil) // TODO: Add custom identifier
+    }
 }
