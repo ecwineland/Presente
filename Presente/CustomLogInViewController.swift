@@ -16,6 +16,7 @@ class CustomLogInViewController: UIViewController {
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,8 +46,21 @@ class CustomLogInViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func logInAction(sender: AnyObject) {
+        
+        var username = self.usernameField.text!
+        var password = self.passwordField.text!
+        
+        // Check for minimum username and password length
+        if (username.characters.count < 4 || password.characters.count < 5) {
+            let alert : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        
     }
 
     @IBAction func signUpAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("signup", sender: self)
     }
 }
