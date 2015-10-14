@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         UIApplication.sharedApplication().registerUserNotificationSettings(
             UIUserNotificationSettings(forTypes: .Alert, categories: nil))
+        
+        Parse.setApplicationId("duoZSNacMsPkrkBfLrOuWAqFPjIKBKMBWSSw1l9m",
+            clientKey: "CBYhaogTdvnJBDRseuU89y7gCIBE4dIUQBZCBuL9")
+        
         return true
     }
     

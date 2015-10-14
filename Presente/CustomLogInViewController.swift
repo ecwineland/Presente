@@ -13,8 +13,12 @@ import ParseUI
 
 class CustomLogInViewController: UIViewController {
 
+    @IBOutlet var loginTitle: UILabel!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var signUpButton: UIButton!
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
     
@@ -22,6 +26,13 @@ class CustomLogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
+        loginTitle.textColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1)
+        loginButton.backgroundColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
+        signUpButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        
+        passwordField.secureTextEntry = true
+        
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
@@ -49,8 +60,8 @@ class CustomLogInViewController: UIViewController {
     
     @IBAction func logInAction(sender: AnyObject) {
         
-        var username = self.usernameField.text!
-        var password = self.passwordField.text!
+        let username = self.usernameField.text!
+        let password = self.passwordField.text!
         
         // Check for minimum username and password length
         if (username.characters.count < 4 || password.characters.count < 5) {

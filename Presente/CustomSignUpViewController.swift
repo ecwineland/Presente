@@ -50,9 +50,9 @@ class CustomSignUpViewController: UIViewController {
 
     @IBAction func signUpAction(sender: AnyObject) {
         
-        var username = self.usernameField.text!
-        var password = self.passwordField.text!
-        var email = self.emailField.text!
+        let username = self.usernameField.text!
+        let password = self.passwordField.text!
+        let email = self.emailField.text!
         
         // Check for minimum username and password length
         if (username.characters.count < 4 || password.characters.count < 5) {
@@ -76,7 +76,7 @@ class CustomSignUpViewController: UIViewController {
             
             self.actInd.startAnimating()
             
-            var newUser = PFUser()
+            let newUser = PFUser()
             
             newUser.username = username
             newUser.password = password
