@@ -85,10 +85,19 @@ class CustomSignUpViewController: UIViewController {
                 
                 self.actInd.stopAnimating()
                 
-                // if error returned
+                // If error returned
                 if (error != nil) {
                     
-                    let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert) // Figure out a real error message later
+                    let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert) // TODO: Is this how to interpolate the error message?
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                // Sign in is successful
+                } else {
+                    
+                    let alertController : UIAlertController = UIAlertController(title: "Signed Up", message: "User created", preferredStyle: .Alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alertController.addAction(defaultAction)
                     
