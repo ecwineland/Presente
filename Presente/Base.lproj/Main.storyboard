@@ -88,17 +88,17 @@
                         <outlet property="signUpButton" destination="J6u-Lw-IcC" id="ymq-u5-5an"/>
                         <outlet property="usernameField" destination="bRa-3P-yWZ" id="a60-li-YyF"/>
                         <segue destination="LEw-fv-zx9" kind="push" identifier="signup" id="RLU-xU-WE7"/>
-                        <segue destination="a2b-kX-Zz0" kind="push" identifier="loggedIn" id="NA3-3r-G81"/>
+                        <segue destination="a2b-kX-Zz0" kind="modal" identifier="loggedIn" id="NA3-3r-G81"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pw7-Ss-XvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="346"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard-->
         <scene sceneID="kro-iF-AK8">
             <objects>
-                <viewController id="gLN-nj-zkg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" title="Dashboard" id="gLN-nj-zkg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nzo-sn-id9"/>
                         <viewControllerLayoutGuide type="bottom" id="eyX-Xm-R9A"/>
@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbT-za-faL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="1035"/>
+            <point key="canvasLocation" x="2064" y="1100"/>
         </scene>
         <!--Custom Sign Up View Controller-->
         <scene sceneID="TyW-HL-nZK">
@@ -192,7 +192,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLr-Kg-PGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="1035"/>
+            <point key="canvasLocation" x="1532" y="1100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D4B-L4-nCm">
