@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Parse
 
 class CustomLogInViewController: UIViewController {
 
@@ -66,6 +67,7 @@ class CustomLogInViewController: UIViewController {
                 
                 self.actInd.stopAnimating()
                 
+                // Login success or denial logic
                 if (user != nil) {
                     // Log in success
                     let alertController : UIAlertController = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .Alert)
@@ -73,7 +75,13 @@ class CustomLogInViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
+                } else {
+                    // Log in failure
+                    let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
                     
+                    self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
                 }
                 
             })
