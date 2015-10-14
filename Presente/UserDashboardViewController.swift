@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class UserDashboardViewController: UIViewController {
+    
+    var user : PFUser = PFUser() // User for whom info is displayed
 
     override func viewDidLoad() {
         super.viewDidLoad()

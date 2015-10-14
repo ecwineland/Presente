@@ -87,6 +87,15 @@ class CustomLogInViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
+                    
+                    // Create user dashboard view controller
+                    var userDashboardController : UserDashboardViewController = self.storyboard?.instantiateViewControllerWithIdentifier("UserDashboardViewController") as! UserDashboardViewController
+                    
+                    // Set data required with data from block return
+                    userDashboardController.user = user!
+                    
+                    // Send to user dashboard
+                    self.pushViewController(userDashboardController, animated: true, completion: nil)
                 } else {
                     // Log in failure
                     let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
@@ -97,8 +106,6 @@ class CustomLogInViewController: UIViewController {
                 }
                 
             })
-                
-                
             
         }
         
@@ -108,7 +115,7 @@ class CustomLogInViewController: UIViewController {
         self.performSegueWithIdentifier("signup", sender: self)
     }
     
-    @IBAction func signInAction(sender: AnyObject) {
-        self.performSegueWithIdentifier("", sender: nil) // TODO: Add custom identifier
-    }
+//    @IBAction func signInAction(sender: AnyObject) {
+//        self.performSegueWithIdentifier("loggedIn", sender: nil) // TODO: Add custom identifier
+//    }
 }
