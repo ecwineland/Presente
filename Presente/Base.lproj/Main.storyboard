@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9NW-bF-o4H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--HomeViewController-->
+        <!--Log In View Controller-->
         <scene sceneID="8ZX-dj-pYa">
             <objects>
-                <viewController title="HomeViewController" id="9NW-bF-o4H" customClass="CustomLogInViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Log In View Controller" id="9NW-bF-o4H" customClass="CustomLogInViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wag-eG-Bwg"/>
                         <viewControllerLayoutGuide type="bottom" id="8WG-Pg-j29"/>
@@ -88,11 +88,55 @@
                         <outlet property="signUpButton" destination="J6u-Lw-IcC" id="ymq-u5-5an"/>
                         <outlet property="usernameField" destination="bRa-3P-yWZ" id="a60-li-YyF"/>
                         <segue destination="LEw-fv-zx9" kind="push" identifier="signup" id="RLU-xU-WE7"/>
+                        <segue destination="gLN-nj-zkg" kind="modal" id="ndd-T1-hW2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pw7-Ss-XvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="346"/>
+            <point key="canvasLocation" x="1532" y="346"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="kro-iF-AK8">
+            <objects>
+                <viewController storyboardIdentifier="Dashboard" title="Dashboard" id="gLN-nj-zkg" customClass="UserDashboardViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nzo-sn-id9"/>
+                        <viewControllerLayoutGuide type="bottom" id="eyX-Xm-R9A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n9Q-Re-CSX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-Jf-RIV">
+                                <rect key="frame" x="118" y="136" width="85" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpo-M1-QMY">
+                                <rect key="frame" x="83" y="186" width="155" height="49"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rpo-M1-QMY" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="A2e-E8-COB"/>
+                            <constraint firstItem="gpX-Jf-RIV" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="cBK-nO-ejs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8qk-Mi-HFf"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Rpo-M1-QMY" id="Zud-ko-YJR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbT-za-faL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="1054"/>
         </scene>
         <!--Custom Sign Up View Controller-->
         <scene sceneID="TyW-HL-nZK">
@@ -145,7 +189,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtQ-Tu-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="346"/>
+            <point key="canvasLocation" x="1928" y="346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D4B-L4-nCm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="piD-nX-uyE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QEp-2T-PtN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9NW-bF-o4H" kind="relationship" relationship="rootViewController" id="Ar9-qP-x0V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hro-4X-9Pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="346"/>
         </scene>
     </scenes>
 </document>

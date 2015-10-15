@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     let beaconManager = ESTBeaconManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // 3. Set the beacon manager's delegate
+        // Beacon manager
         self.beaconManager.delegate = self
         self.beaconManager.requestAlwaysAuthorization()
         self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         UIApplication.sharedApplication().registerUserNotificationSettings(
             UIUserNotificationSettings(forTypes: .Alert, categories: nil))
         
+        // Set Parse application ID
         Parse.setApplicationId("duoZSNacMsPkrkBfLrOuWAqFPjIKBKMBWSSw1l9m",
             clientKey: "CBYhaogTdvnJBDRseuU89y7gCIBE4dIUQBZCBuL9")
         

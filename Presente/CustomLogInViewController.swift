@@ -82,11 +82,22 @@ class CustomLogInViewController: UIViewController {
                 // Login success or denial logic
                 if (user != nil) {
                     // Log in success
-                    let alertController : UIAlertController = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .Alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    alertController.addAction(defaultAction)
+//                    let alertController : UIAlertController = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .Alert)
+//                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                    alertController.addAction(defaultAction)
                     
-                    self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
+                    dispatch_async(dispatch_get_main_queue()){
+//                        self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
+                        
+                        // Create user dashboard view controller
+                        var dashboardController = self.storyboard!.instantiateViewControllerWithIdentifier("Dashboard")
+                        
+                        // TODO: Set data required with data from block return
+                        //                    userDashboardController.user = user!
+                        
+                        // Send to user dashboard
+                        self.presentViewController(dashboardController, animated: true, completion: nil)
+                    }
                 } else {
                     // Log in failure
                     let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
@@ -97,8 +108,6 @@ class CustomLogInViewController: UIViewController {
                 }
                 
             })
-                
-                
             
         }
         
@@ -107,4 +116,8 @@ class CustomLogInViewController: UIViewController {
     @IBAction func signUpAction(sender: AnyObject) {
         self.performSegueWithIdentifier("signup", sender: self)
     }
+    
+//    @IBAction func signInAction(sender: AnyObject) {
+//        self.performSegueWithIdentifier("loggedIn", sender: nil) // TODO: Add custom identifier
+//    }
 }

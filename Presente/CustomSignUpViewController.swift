@@ -97,12 +97,10 @@ class CustomSignUpViewController: UIViewController {
                     
                 // Sign in is successful
                 } else {
-                    
+                    // Signed in alert
                     let alertController : UIAlertController = UIAlertController(title: "Signed Up", message: "User created", preferredStyle: .Alert) 
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alertController.addAction(defaultAction)
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
                     
                 }
                 
