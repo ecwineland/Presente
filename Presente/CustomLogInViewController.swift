@@ -82,21 +82,15 @@ class CustomLogInViewController: UIViewController {
                 // Login success or denial logic
                 if (user != nil) {
                     // Log in success
-//                    let alertController : UIAlertController = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .Alert)
-//                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-//                    alertController.addAction(defaultAction)
-                    
                     dispatch_async(dispatch_get_main_queue()){
 //                        self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
                         
                         // Create user dashboard view controller
-                        var dashboardController = self.storyboard!.instantiateViewControllerWithIdentifier("Classes")
+                        var classesController = self.storyboard!.instantiateViewControllerWithIdentifier("Classes")
                         
-                        // TODO: Set data required with data from block return
-                        //                    userDashboardController.user = user!
-                        
-                        // Send to user dashboard
-                        self.presentViewController(dashboardController, animated: true, completion: nil)
+                        // Send to classes dashboard
+//                        self.presentViewController(classesController, animated: true, completion: nil)
+                        self.performSegueWithIdentifier("toClasses", sender: self)
                     }
                 } else {
                     // Log in failure
