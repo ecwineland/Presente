@@ -47,8 +47,29 @@ class CreateClassViewController: UIViewController {
             var newClass = PFObject(className: "Class")
             newClass.setObject(clssName.text!, forKey: "Name")
             newClass.setObject(clssNum.text!, forKey: "Num")
-            newClass.setObject(<#T##object: AnyObject##AnyObject#>, forKey: <#T##String#>)
+            newClass.setObject(clssDesc.text!, forKey: "Description")
             
+            newClass.saveInBackgroundWithBlock({ (succeed, error) -> Void in
+                
+                // Object created
+                if succeed {
+                 
+                    print("Class created with name: \(self.clssName.text!)")
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                
+                // Create error message
+                } else {
+                    
+                    let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }
+                
+            })
         }
         
     }

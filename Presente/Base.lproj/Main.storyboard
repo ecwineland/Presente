@@ -204,9 +204,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="hmY-VN-24k"/>
                     <connections>
-                        <outlet property="classDesc" destination="QH2-gI-xzO" id="PvF-Aj-56g"/>
-                        <outlet property="className" destination="VpG-1F-OZf" id="7Z0-ne-V5H"/>
-                        <outlet property="classNum" destination="HYP-Pi-nIE" id="rnA-yg-lS3"/>
+                        <outlet property="clssDesc" destination="QH2-gI-xzO" id="WPh-yt-sbW"/>
+                        <outlet property="clssName" destination="VpG-1F-OZf" id="52S-B2-GvC"/>
+                        <outlet property="clssNum" destination="HYP-Pi-nIE" id="TyP-rc-dqi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8W-7B-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
