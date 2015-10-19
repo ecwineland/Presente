@@ -90,7 +90,7 @@ class CustomLogInViewController: UIViewController {
 //                        self.presentViewController(alertController, animated: true, completion: nil) // NOTE: self recommended by Xcode
                         
                         // Create user dashboard view controller
-                        var dashboardController = self.storyboard!.instantiateViewControllerWithIdentifier("Dashboard")
+                        var dashboardController = self.storyboard!.instantiateViewControllerWithIdentifier("Classes View")
                         
                         // TODO: Set data required with data from block return
                         //                    userDashboardController.user = user!

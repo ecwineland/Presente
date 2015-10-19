@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class UserDashboardViewController: UIViewController {
+class ClassesViewController: UITableViewController {
     
     @IBOutlet var nameLabel: UILabel!
     

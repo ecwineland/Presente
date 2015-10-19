@@ -108,7 +108,7 @@
         <!--Dashboard-->
         <scene sceneID="kro-iF-AK8">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" title="Dashboard" id="gLN-nj-zkg" customClass="UserDashboardViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Classes View" title="Dashboard" id="gLN-nj-zkg" customClass="ClassesViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nzo-sn-id9"/>
                         <viewControllerLayoutGuide type="bottom" id="eyX-Xm-R9A"/>
