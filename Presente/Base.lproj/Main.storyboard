@@ -181,8 +181,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Create a Class" id="zY5-7o-9UW">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fAK-x0-xzM"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="13c-JE-0rM"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fAK-x0-xzM">
+                                            <connections>
+                                                <action selector="cancel:" destination="jin-6K-sk9" id="HeW-SG-fUX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="13c-JE-0rM">
+                                            <connections>
+                                                <action selector="createClass:" destination="jin-6K-sk9" id="7rX-XN-Xg4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -195,6 +203,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hmY-VN-24k"/>
+                    <connections>
+                        <outlet property="classDesc" destination="QH2-gI-xzO" id="PvF-Aj-56g"/>
+                        <outlet property="className" destination="VpG-1F-OZf" id="7Z0-ne-V5H"/>
+                        <outlet property="classNum" destination="HYP-Pi-nIE" id="rnA-yg-lS3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8W-7B-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
