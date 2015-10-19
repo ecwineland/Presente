@@ -28,6 +28,7 @@ class CreateClassViewController: UIViewController {
     
     
     @IBAction func cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     

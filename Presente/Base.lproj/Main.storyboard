@@ -98,120 +98,104 @@
                         <outlet property="signUpButton" destination="J6u-Lw-IcC" id="ymq-u5-5an"/>
                         <outlet property="usernameField" destination="bRa-3P-yWZ" id="a60-li-YyF"/>
                         <segue destination="LEw-fv-zx9" kind="push" identifier="signup" id="RLU-xU-WE7"/>
-                        <segue destination="wnv-gs-a8w" kind="modal" id="ndd-T1-hW2"/>
+                        <segue destination="rc7-aM-1yK" kind="modal" id="cJX-Ey-eAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pw7-Ss-XvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="346"/>
         </scene>
-        <!--Dashboard-->
-        <scene sceneID="kro-iF-AK8">
+        <!--Classes View Controller-->
+        <scene sceneID="pjs-7P-M6X">
             <objects>
-                <viewController storyboardIdentifier="Classes View" title="Dashboard" id="gLN-nj-zkg" customClass="ClassesViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nzo-sn-id9"/>
-                        <viewControllerLayoutGuide type="bottom" id="eyX-Xm-R9A"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n9Q-Re-CSX">
+                <tableViewController storyboardIdentifier="Classes" title="Classes View Controller" id="yjc-iD-3iO" customClass="ClassesTableViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UfP-RP-zDt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-Jf-RIV">
-                                <rect key="frame" x="118" y="136" width="85" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpo-M1-QMY">
-                                <rect key="frame" x="83" y="186" width="155" height="49"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-DQ-d6y">
-                                <rect key="frame" x="110" y="312" width="100" height="30"/>
-                                <state key="normal" title="Create a Class"/>
-                                <connections>
-                                    <segue destination="jin-6K-sk9" kind="modal" identifier="createClass" id="ugw-i1-A7t"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Rpo-M1-QMY" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="A2e-E8-COB"/>
-                            <constraint firstItem="gpX-Jf-RIV" firstAttribute="centerX" secondItem="n9Q-Re-CSX" secondAttribute="centerX" id="cBK-nO-ejs"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="8qk-Mi-HFf"/>
-                    <connections>
-                        <outlet property="nameLabel" destination="Rpo-M1-QMY" id="Zud-ko-YJR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dbT-za-faL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MX8-zb-Ptd">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MX8-zb-Ptd" id="Ei2-T4-ZT9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yjc-iD-3iO" id="xnk-j9-K1Q"/>
+                            <outlet property="delegate" destination="yjc-iD-3iO" id="sLz-BP-K41"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Classes" id="kJx-sz-Wq6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bfr-NO-5Bx">
+                            <connections>
+                                <segue destination="5qR-z2-Pam" kind="modal" id="8Qp-RT-4cS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOP-wb-OHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="1054"/>
+            <point key="canvasLocation" x="1928" y="1013"/>
         </scene>
         <!--Create Class View Controller-->
-        <scene sceneID="Vlk-ur-fBq">
+        <scene sceneID="stR-1q-B8C">
             <objects>
-                <viewController id="jin-6K-sk9" customClass="CreateClassViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Create" id="5qR-z2-Pam" customClass="CreateClassViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="X5f-AQ-gZB"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Pc-9t-eb1"/>
+                        <viewControllerLayoutGuide type="top" id="Zyh-hS-2Os"/>
+                        <viewControllerLayoutGuide type="bottom" id="3lk-oT-ecY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MXW-RG-UoG">
+                    <view key="view" contentMode="scaleToFill" id="2mS-yR-n3q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QH2-gI-xzO">
-                                <rect key="frame" x="28" y="179" width="272" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYP-Pi-nIE">
-                                <rect key="frame" x="28" y="133" width="272" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chc-VE-6eF">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWP-wl-Uab">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Create a Class" id="zY5-7o-9UW">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fAK-x0-xzM">
+                                    <navigationItem title="Create a Class" id="UxV-Jy-PP4">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2aq-Pv-nRe">
                                             <connections>
-                                                <action selector="cancel:" destination="jin-6K-sk9" id="HeW-SG-fUX"/>
+                                                <action selector="cancel:" destination="5qR-z2-Pam" id="nl2-fm-Nth"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="13c-JE-0rM">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0ip-Eh-oWP">
                                             <connections>
-                                                <action selector="createClass:" destination="jin-6K-sk9" id="7rX-XN-Xg4"/>
+                                                <action selector="createClass:" destination="5qR-z2-Pam" id="xpV-Ao-1T7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VpG-1F-OZf">
-                                <rect key="frame" x="28" y="82" width="272" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class name, &quot;Mobile Apps&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-JD-z9j">
+                                <rect key="frame" x="20" y="59" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class number, e.g. 67475" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LS-LH-pnL">
+                                <rect key="frame" x="20" y="105" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFH-ed-Ev8">
+                                <rect key="frame" x="20" y="155" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hmY-VN-24k"/>
                     <connections>
-                        <outlet property="clssDesc" destination="QH2-gI-xzO" id="WPh-yt-sbW"/>
-                        <outlet property="clssName" destination="VpG-1F-OZf" id="52S-B2-GvC"/>
-                        <outlet property="clssNum" destination="HYP-Pi-nIE" id="TyP-rc-dqi"/>
+                        <outlet property="clssDesc" destination="QFH-ed-Ev8" id="baX-5n-ptG"/>
+                        <outlet property="clssName" destination="Y7k-JD-z9j" id="pz8-dX-b1J"/>
+                        <outlet property="clssNum" destination="0LS-LH-pnL" id="rah-4d-a0z"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b8W-7B-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ME-u1-b8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2446" y="1054"/>
+            <point key="canvasLocation" x="2332" y="1013"/>
         </scene>
         <!--Custom Sign Up View Controller-->
         <scene sceneID="TyW-HL-nZK">
@@ -286,22 +270,22 @@
             <point key="canvasLocation" x="1000" y="346"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="xr7-MA-dyg">
+        <scene sceneID="Nd1-QR-Cee">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wnv-gs-a8w" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rc7-aM-1yK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pf0-TG-TYe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dJT-J7-fC5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gLN-nj-zkg" kind="relationship" relationship="rootViewController" id="JsH-Cc-H2o"/>
+                        <segue destination="yjc-iD-3iO" kind="relationship" relationship="rootViewController" id="zxp-9Y-XoG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nfW-2J-dqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tQ-C4-LXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="1054"/>
+            <point key="canvasLocation" x="1532" y="1013"/>
         </scene>
     </scenes>
 </document>
