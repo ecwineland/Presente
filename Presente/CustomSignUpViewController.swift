@@ -15,6 +15,7 @@ class CustomSignUpViewController: UIViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet var signUpButton: UIButton!
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
     
