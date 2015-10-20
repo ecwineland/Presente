@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Presente/ClassesTableViewController.swift"
-            timestampString = "466995998.506768"
+            timestampString = "466999741.919232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "getClasses()"
             landmarkType = "5">
          </BreakpointContent>

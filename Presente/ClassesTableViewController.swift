@@ -41,12 +41,12 @@ class ClassesTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return classes.count
     }
     
     // Retrieves all classes that have been made
@@ -62,15 +62,18 @@ class ClassesTableViewController: UITableViewController {
         
         return allClasses
     }
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("ClassesTableViewCell", forIndexPath: indexPath) as! ClassesTableViewCell
+        
+        let currClass = classes[indexPath.row]
+        let currClassName = currClass["Name"] as! String
+        
+        cell.className.text = currClassName
+    
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
