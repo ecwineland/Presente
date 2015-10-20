@@ -13,6 +13,9 @@ class ClassesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Don't display "back" button after segue
+        self.navigationItem.hidesBackButton = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

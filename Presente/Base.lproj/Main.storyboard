@@ -177,7 +177,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ufd-wi-GEo">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ufd-wi-GEo" id="mIg-re-Ndy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -250,6 +250,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tJM-21-fjd">
                             <connections>
                                 <action selector="cancel:" destination="AF1-Cc-Jb0" id="QjD-ep-eng"/>
+                                <segue destination="GhD-ra-ZQy" kind="push" identifier="backToClasses" id="Zou-Kh-ImC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zBD-2N-stU">
@@ -303,4 +304,7 @@
             <point key="canvasLocation" x="1532" y="1057"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zou-Kh-ImC"/>
+    </inferredMetricsTieBreakers>
 </document>
