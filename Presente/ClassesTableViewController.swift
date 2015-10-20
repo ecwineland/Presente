@@ -49,10 +49,17 @@ class ClassesTableViewController: UITableViewController {
         return classes.count
     }
     
-    // Retrieves all classes that have been made
+    // Retrieves all classes that have been made by this user
     func getClasses() -> [PFObject] {
         var allClasses : [PFObject] = []
-        let allClassesQuery = PFQuery(className: "Class") // className given to all objects
+        
+        // All userClass objects made
+        let allUserClasses = PFQuery(className: "User_Class") // className given to all objects
+        
+        // All userClass objects made by this user
+        allUserClasses.whereKey("User", equalTo: currentUser!)
+        
+        // Get all classes from these userClass objects
         
         do {
             allClasses = try allClassesQuery.findObjects() as [PFObject]  // TODO: Make this background procress, because this line is taking a long time
