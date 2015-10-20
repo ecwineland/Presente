@@ -16,6 +16,7 @@ class ClassesTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         classes = getClasses()
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
