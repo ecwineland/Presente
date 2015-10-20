@@ -57,7 +57,7 @@ class CreateClassViewController: UIViewController {
                 if succeed {
                  
                     print("Class created with name: \(self.clssName.text!)")
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.performSegueWithIdentifier("backToClasses", sender: self)
                 
                 // Create error message
                 } else {
