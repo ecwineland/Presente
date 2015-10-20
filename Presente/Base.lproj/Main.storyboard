@@ -290,6 +290,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="clssDesc" destination="WBt-Aa-M2Y" id="eBN-wB-dDz"/>
+                        <outlet property="clssName" destination="WRH-Fe-3kd" id="kOZ-e6-8jy"/>
+                        <outlet property="clssNum" destination="tSy-Ob-vYb" id="wnf-rH-0M6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J95-45-wVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
