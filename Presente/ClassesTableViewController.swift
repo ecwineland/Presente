@@ -52,10 +52,10 @@ class ClassesTableViewController: UITableViewController {
     // Retrieves all classes that have been made
     func getClasses() -> [PFObject] {
         var allClasses : [PFObject] = []
-        let allClassesQuery = PFQuery(className: "Class")
+        let allClassesQuery = PFQuery(className: "Class") // className given to all objects
         
         do {
-            allClasses = try allClassesQuery.findObjects() as [PFObject]
+            allClasses = try allClassesQuery.findObjects() as [PFObject]  // TODO: Make this background procress, because this line is taking a long time
         } catch _ {
             allClasses = []
         }
