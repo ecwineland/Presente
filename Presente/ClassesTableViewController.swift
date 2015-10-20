@@ -96,7 +96,7 @@ class ClassesTableViewController: UITableViewController {
         let currClassName = currClass["Name"] as! String
         
         cell.className.text = currClassName
-    
+        
         return cell
     }
     
