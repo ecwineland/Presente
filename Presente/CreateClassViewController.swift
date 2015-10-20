@@ -28,7 +28,8 @@ class CreateClassViewController: UIViewController {
     
     
     @IBAction func cancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        self.performSegueWithIdentifier("backToClasses", sender: self)
         
     }
     
