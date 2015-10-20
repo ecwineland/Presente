@@ -26,10 +26,19 @@ class CustomLogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Customization for the view
+        let cornerRadiusVal: CGFloat = 5.0
         self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
+        
         loginTitle.textColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1)
+        
         loginButton.backgroundColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
-        signUpButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        loginButton.layer.cornerRadius = cornerRadiusVal
+        
+        signUpButton.backgroundColor = UIColor.clearColor()
+        signUpButton.layer.borderWidth = 2.0
+        signUpButton.layer.borderColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1).CGColor
+        signUpButton.layer.cornerRadius = cornerRadiusVal
         
         passwordField.secureTextEntry = true
         

@@ -22,7 +22,12 @@ class CustomSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.viewDidLoad()
+        // Customization for the view
+        let cornerRadiusVal: CGFloat = 5.0
+        self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
+        
+        signUpButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        signUpButton.layer.cornerRadius = cornerRadiusVal
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
