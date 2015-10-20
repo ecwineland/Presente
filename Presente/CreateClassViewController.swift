@@ -51,13 +51,37 @@ class CreateClassViewController: UIViewController {
             newClass.setObject(clssNum.text!, forKey: "Num")
             newClass.setObject(clssDesc.text!, forKey: "Description")
             
-            newClass.saveInBackgroundWithBlock({ (succeed, error) -> Void in
+            // Save newClass
+            newClass.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                 
                 // Object created
-                if succeed {
-                 
+                if succeeded {
+                    
+                    // Users :: Classes is a many to many, so create user_classes to resolve
+                    let userClass = PFObject(className: "User_Class")
+                    userClass.setObject(newClass, forKey: "Class")
+                    userClass.setObject(PFUser.currentUser()!, forKey: "User")
+                    
+                    // Save userClass
+                    userClass.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                        
+                        if succeeded {
+                            print("UserClass created for class: \(self.clssName.text!) and user \(PFUser.currentUser()!)")
+                        
+                        // Show error, if there is one
+                        } else {
+                            let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
+                            
+                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alertController.addAction(defaultAction)
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                        
+                    })
+                    
                     print("Class created with name: \(self.clssName.text!)")
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.performSegueWithIdentifier("backToClasses", sender: self)
                 
                 // Create error message
                 } else {

@@ -11,6 +11,14 @@ import Parse
 
 class ClassesTableViewController: UITableViewController {
     
+    let currentUser = PFUser.currentUser()
+    var classes : [PFObject] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        classes = getClasses()
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,23 +41,65 @@ class ClassesTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return classes.count
     }
-
-    /*
+    
+    // Retrieves all classes that have been made by this user
+    // Borrows from Siddarth's code for Present, following conversation on how extract for list in tableview
+    func getClasses() -> [PFObject] {
+        var allClasses : [PFObject] = []
+        
+        // All userClass objects made
+        let allUserClasses = PFQuery(className: "User_Class") // className given to all objects
+        
+        // All userClass objects made by this user
+        allUserClasses.whereKey("User", equalTo: currentUser!)
+        
+        
+        // Get all classes from these userClass objects
+        var userClasses : [PFObject] = []
+        
+        // Convert to array of PFObjects
+        do {
+            userClasses = try allUserClasses.findObjects() as [PFObject]
+        } catch _ {
+            userClasses = []
+        }
+        
+        // Extract each class from userClass object
+        for userClass in userClasses {
+            
+            let classObj = userClass["Class"]!.objectId
+            var clssQuery = PFQuery(className: "Class")
+            
+            // Get object we want
+            do {
+                let clss = try clssQuery.getObjectWithId(classObj!!)
+                allClasses.append(clss)
+            } catch _ {
+                let clss = "I give up"
+            }
+        }
+        
+        return allClasses
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("ClassesTableViewCell", forIndexPath: indexPath) as! ClassesTableViewCell
+        
+        let currClass = classes[indexPath.row]
+        let currClassName = currClass["Name"] as! String
+        
+        cell.className.text = currClassName
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
