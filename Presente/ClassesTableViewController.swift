@@ -50,6 +50,7 @@ class ClassesTableViewController: UITableViewController {
     }
     
     // Retrieves all classes that have been made by this user
+    // Borrows from Siddarth's code for Present, following conversation on how extract for list in tableview
     func getClasses() -> [PFObject] {
         var allClasses : [PFObject] = []
         
@@ -59,12 +60,30 @@ class ClassesTableViewController: UITableViewController {
         // All userClass objects made by this user
         allUserClasses.whereKey("User", equalTo: currentUser!)
         
-        // Get all classes from these userClass objects
         
+        // Get all classes from these userClass objects
+        var userClasses : [PFObject] = []
+        
+        // Convert to array of PFObjects
         do {
-            allClasses = try allClassesQuery.findObjects() as [PFObject]  // TODO: Make this background procress, because this line is taking a long time
+            userClasses = try allUserClasses.findObjects() as [PFObject]
         } catch _ {
-            allClasses = []
+            userClasses = []
+        }
+        
+        // Extract each class from userClass object
+        for userClass in userClasses {
+            
+            let classObj = userClass["Class"]!.objectId
+            var clssQuery = PFQuery(className: "Class")
+            
+            // Get object we want
+            do {
+                let clss = try clssQuery.getObjectWithId(classObj!!)
+                allClasses.append(clss)
+            } catch _ {
+                let clss = "I give up"
+            }
         }
         
         return allClasses
