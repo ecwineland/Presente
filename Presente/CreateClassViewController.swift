@@ -51,6 +51,9 @@ class CreateClassViewController: UIViewController {
             newClass.setObject(clssNum.text!, forKey: "Num")
             newClass.setObject(clssDesc.text!, forKey: "Description")
             
+            // To distinguish between classes made by different users
+//            newClass.setValue(<#T##value: AnyObject?##AnyObject?#>, forKey: <#T##String#>)
+            
             newClass.saveInBackgroundWithBlock({ (succeed, error) -> Void in
                 
                 // Object created

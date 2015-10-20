@@ -11,6 +11,13 @@ import Parse
 
 class ClassesTableViewController: UITableViewController {
     
+    let currentUser = PFUser.currentUser()
+    var classes : [PFObject] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        classes = getClasses()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +47,20 @@ class ClassesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+    
+    // Retrieves all classes that have been made
+    func getClasses() -> [PFObject] {
+        var allClasses : [PFObject] = []
+        let allClassesQuery = PFQuery(className: "Class")
+        
+        do {
+            allClasses = try allClassesQuery.findObjects() as [PFObject]
+        } catch _ {
+            allClasses = []
+        }
+        
+        return allClasses
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
