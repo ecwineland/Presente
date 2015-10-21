@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, ESTBeaconManagerDelegate {
     
     @IBOutlet var clssName: UITextField!
     @IBOutlet var clssNum: UITextField!
@@ -30,6 +30,12 @@ class CreateClassViewController: UIViewController {
     @IBAction func cancel(sender: AnyObject) {
         
         self.performSegueWithIdentifier("backToClasses", sender: self)
+        
+    }
+    
+    
+    @IBAction func startStopMonitoring(sender: AnyObject) {
+        
         
     }
     
