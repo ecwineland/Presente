@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98V-p7-RCk">
-                                <rect key="frame" x="-2" y="508" width="325" height="40"/>
+                                <rect key="frame" x="0.0" y="508" width="325" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -124,21 +124,50 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-M2-xlh">
-                                <rect key="frame" x="-2" y="117" width="325" height="40"/>
+                                <rect key="frame" x="-2" y="273" width="325" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Last Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O2l-z9-ulU">
+                                <rect key="frame" x="-2" y="220" width="325" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nDl-TX-lYL">
-                                <rect key="frame" x="-2" y="229" width="325" height="40"/>
+                                <rect key="frame" x="-2" y="327" width="325" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IFW-bs-jSb">
-                                <rect key="frame" x="-2" y="173" width="325" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTh-XM-wls">
+                                <rect key="frame" x="135" y="88" width="51" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="swo-aJ-Svq">
+                                <rect key="frame" x="-2" y="120" width="325" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Student"/>
+                                    <segment title="Professor"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mqI-4p-jj0">
+                                <rect key="frame" x="-2" y="366" width="325" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="First Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-EC-MQR">
+                                <rect key="frame" x="-2" y="181" width="325" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -148,23 +177,30 @@
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zJB-M2-xlh" firstAttribute="top" secondItem="O2l-z9-ulU" secondAttribute="bottom" constant="13" id="1Wd-cp-e2b"/>
+                            <constraint firstItem="nDl-TX-lYL" firstAttribute="top" secondItem="zJB-M2-xlh" secondAttribute="bottom" constant="14" id="4g9-GJ-2Qn"/>
+                            <constraint firstItem="O2l-z9-ulU" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="RsD-lT-Vgh"/>
+                            <constraint firstItem="swo-aJ-Svq" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="X44-fA-Qsi"/>
                             <constraint firstItem="zJB-M2-xlh" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="aIh-lU-ixR"/>
-                            <constraint firstItem="IFW-bs-jSb" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="h7M-Eh-Hdo"/>
                             <constraint firstItem="98V-p7-RCk" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="ke0-65-LCx"/>
+                            <constraint firstItem="mqI-4p-jj0" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="lLQ-HH-7uh"/>
+                            <constraint firstItem="tTh-XM-wls" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="oTp-Kr-LQ1"/>
+                            <constraint firstItem="cr2-EC-MQR" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="qu3-SW-3Mo"/>
                             <constraint firstItem="nDl-TX-lYL" firstAttribute="centerX" secondItem="y5O-O6-92M" secondAttribute="centerX" id="xaF-6f-D5D"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="94h-hg-pEV"/>
                     <connections>
                         <outlet property="emailField" destination="zJB-M2-xlh" id="JZa-xJ-FiR"/>
+                        <outlet property="iAmLabel" destination="tTh-XM-wls" id="qcC-mc-gjq"/>
                         <outlet property="passwordField" destination="nDl-TX-lYL" id="cPN-h7-NlT"/>
                         <outlet property="signUpButton" destination="98V-p7-RCk" id="LnW-Zg-6fd"/>
-                        <outlet property="usernameField" destination="IFW-bs-jSb" id="0dy-oZ-gYD"/>
+                        <outlet property="userRoleSegControl" destination="swo-aJ-Svq" id="zKJ-It-j1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtQ-Tu-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="346"/>
+            <point key="canvasLocation" x="1954" y="346"/>
         </scene>
         <!--Classes-->
         <scene sceneID="vCa-30-LFy">
@@ -185,6 +221,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7C-fA-wtW">
                                             <rect key="frame" x="8" y="11" width="271" height="21"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -227,6 +264,7 @@
                     <view key="view" contentMode="scaleToFill" id="Y2c-Eq-3E5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ipw-76-HhX"/>

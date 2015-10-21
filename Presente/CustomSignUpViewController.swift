@@ -11,11 +11,14 @@ import Parse
 import ParseUI
 
 class CustomSignUpViewController: UIViewController {
-
+    
+    @IBOutlet var iAmLabel: UILabel!
+    @IBOutlet var userRoleSegControl: UISegmentedControl!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var signUpButton: UIButton!
+    
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
     
@@ -26,8 +29,13 @@ class CustomSignUpViewController: UIViewController {
         let cornerRadiusVal: CGFloat = 5.0
         self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
         
-        signUpButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        iAmLabel.textColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1)
+        
+        signUpButton.backgroundColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
         signUpButton.layer.cornerRadius = cornerRadiusVal
+        
+        userRoleSegControl.layer.borderColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1).CGColor
+        userRoleSegControl.tintColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
