@@ -14,6 +14,7 @@ class CreateClassViewController: UIViewController, ESTBeaconManagerDelegate {
     @IBOutlet var clssNum: UITextField!
     @IBOutlet var clssDesc: UITextField!
     
+    let beaconManager = ESTBeaconManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
