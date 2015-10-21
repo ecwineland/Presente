@@ -216,6 +216,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E4D90731BD7441F0013A547 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				6E4D90691BD72A680013A547 /* EmailValidation.swift */,
+				6E4D906B1BD72B060013A547 /* Validation.swift */,
+				6E4D906D1BD72B2F0013A547 /* ValidationErrorType.swift */,
+				6E4D906F1BD72E110013A547 /* PasswordValidation.swift */,
+			);
+			name = Validations;
+			sourceTree = "<group>";
+		};
 		78E3BD55CA908E22D0F134AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +272,7 @@
 		8CE683911BC62A050071BFF8 /* Presente */ = {
 			isa = PBXGroup;
 			children = (
+				6E4D90731BD7441F0013A547 /* Validations */,
 				8C85AE1E1BCC4A3400DD3302 /* ParseUI.framework */,
 				8C85AE061BCC48FA00DD3302 /* Bolts.framework */,
 				8C85AE071BCC48FA00DD3302 /* Parse.framework */,
@@ -277,10 +289,6 @@
 				8CE6839B1BC62A050071BFF8 /* LaunchScreen.storyboard */,
 				8CE6839E1BC62A050071BFF8 /* Info.plist */,
 				8CE6840B1BC62CFE0071BFF8 /* ObjCBridge.h */,
-				6E4D90691BD72A680013A547 /* EmailValidation.swift */,
-				6E4D906B1BD72B060013A547 /* Validation.swift */,
-				6E4D906D1BD72B2F0013A547 /* ValidationErrorType.swift */,
-				6E4D906F1BD72E110013A547 /* PasswordValidation.swift */,
 			);
 			path = Presente;
 			sourceTree = "<group>";
