@@ -20,7 +20,7 @@ class ClassSessionViewController: UIViewController {
     @IBOutlet weak var numStudentsLabel: UILabel!
     @IBOutlet weak var numTextLabel: UILabel!
     
-    // For start and stop recording
+    // For access to delegate for start and stop recording
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -34,6 +34,11 @@ class ClassSessionViewController: UIViewController {
         presentButton.layer.cornerRadius = cornerRadiusVal
         absentButton.backgroundColor = UIColor(red: (255/255.0), green:(206/255.0), blue:(52/255.0), alpha: 1)
         absentButton.layer.cornerRadius = cornerRadiusVal
+        
+        startButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        startButton.layer.cornerRadius = cornerRadiusVal
+        stopButton.backgroundColor = UIColor(red: (255/255.0), green:(206/255.0), blue:(52/255.0), alpha: 1)
+        stopButton.layer.cornerRadius = cornerRadiusVal
         
         // Customization for the circle graph view
         circleGraph.endArc = 0.15
