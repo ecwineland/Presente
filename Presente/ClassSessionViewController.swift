@@ -13,9 +13,15 @@ class ClassSessionViewController: UIViewController {
     @IBOutlet var presentButton: UIButton!
     @IBOutlet var absentButton: UIButton!
     
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
+    
     @IBOutlet weak var circleGraph: CircleGraphView!
     @IBOutlet weak var numStudentsLabel: UILabel!
     @IBOutlet weak var numTextLabel: UILabel!
+    
+    // For access to delegate for start and stop recording
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,11 @@ class ClassSessionViewController: UIViewController {
         presentButton.layer.cornerRadius = cornerRadiusVal
         absentButton.backgroundColor = UIColor(red: (255/255.0), green:(206/255.0), blue:(52/255.0), alpha: 1)
         absentButton.layer.cornerRadius = cornerRadiusVal
+        
+        startButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        startButton.layer.cornerRadius = cornerRadiusVal
+        stopButton.backgroundColor = UIColor(red: (255/255.0), green:(206/255.0), blue:(52/255.0), alpha: 1)
+        stopButton.layer.cornerRadius = cornerRadiusVal
         
         // Customization for the circle graph view
         circleGraph.endArc = 0.15
@@ -45,6 +56,18 @@ class ClassSessionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Start, stop monitoring with beacon
+    @IBAction func startMonitoring(sender: AnyObject) {
+        
+        appDelegate.startMonitoring()
+        
+    }
+    
+    @IBAction func stopMonitoring(sender: AnyObject) {
+        
+        appDelegate.stopMonitoring()
+        
+    }
 
     /*
     // MARK: - Navigation

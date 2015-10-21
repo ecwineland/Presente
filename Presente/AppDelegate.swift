@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         // Beacon manager
         self.beaconManager.delegate = self
         self.beaconManager.requestAlwaysAuthorization()
-        self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
-            proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
-            major: 10190, minor: 37362, identifier: "monitored region")) // wired for our specific Estimote beacon
+        startMonitoring()
         
         UIApplication.sharedApplication().registerUserNotificationSettings(
             UIUserNotificationSettings(forTypes: .Alert, categories: nil))
@@ -32,6 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
             clientKey: "CBYhaogTdvnJBDRseuU89y7gCIBE4dIUQBZCBuL9")
         
         return true
+    }
+    
+    // Turn on background monitoring
+    func startMonitoring() {
+        self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
+            proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
+            major: 10190, minor: 37362, identifier: "monitored region"))
+    }
+    
+    // Turn off background monitoring
+    func stopMonitoring() {
+        self.beaconManager.stopMonitoringForRegion(CLBeaconRegion(
+            proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
+            major: 10190, minor: 37362, identifier: "monitored region"))
     }
     
     func beaconManager(manager: AnyObject, didEnterRegion region: CLBeaconRegion) {

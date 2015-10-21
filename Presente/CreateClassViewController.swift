@@ -33,6 +33,7 @@ class CreateClassViewController: UIViewController {
         
     }
     
+    
     @IBAction func createClass(sender: AnyObject) {
         
         // Create error message if one or more fields is empty
