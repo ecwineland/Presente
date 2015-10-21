@@ -266,42 +266,74 @@
         <!--Tuesday, October 13th-->
         <scene sceneID="Zav-rH-8fw">
             <objects>
-                <viewController id="nKP-es-fhk" sceneMemberID="viewController">
+                <viewController id="nKP-es-fhk" customClass="ClassSessionViewController" customModule="Presente" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VjL-Oj-bpP"/>
                         <viewControllerLayoutGuide type="bottom" id="MoV-lK-08s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y2c-Eq-3E5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zE-Ud-NTI">
-                                <rect key="frame" x="40" y="95" width="240" height="240"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zE-Ud-NTI" customClass="CircleGraphView" customModule="Presente" customModuleProvider="target">
+                                <rect key="frame" x="37" y="104" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="46" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-hq-0cP">
+                                        <rect key="frame" x="98" y="115" width="104" height="69"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="70"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Students Presente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ez0-v9-FVZ">
+                                        <rect key="frame" x="103" y="184" width="94" height="51"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4s-P5-UsG">
-                                <rect key="frame" x="233" y="497" width="49" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Absent"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esm-Cz-iRG">
-                                <rect key="frame" x="40" y="497" width="61" height="30"/>
+                                <rect key="frame" x="37" y="575" width="140" height="40"/>
                                 <animations/>
-                                <state key="normal" title="Presente"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Presente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4s-P5-UsG">
+                                <rect key="frame" x="197" y="575" width="140" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Absent">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1zE-Ud-NTI" firstAttribute="centerX" secondItem="Y2c-Eq-3E5" secondAttribute="centerX" id="zUE-mA-EqJ"/>
+                            <constraint firstItem="1zE-Ud-NTI" firstAttribute="centerX" secondItem="Y2c-Eq-3E5" secondAttribute="centerX" id="ujt-1r-jqi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tuesday, October 13th" id="ipw-76-HhX"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="absentButton" destination="H4s-P5-UsG" id="LHW-cc-GKF"/>
+                        <outlet property="circleGraph" destination="1zE-Ud-NTI" id="gZ3-xd-zdE"/>
+                        <outlet property="numStudentsLabel" destination="tYe-hq-0cP" id="wwf-VO-1V3"/>
+                        <outlet property="numTextLabel" destination="Ez0-v9-FVZ" id="R8M-6F-WRz"/>
+                        <outlet property="presentButton" destination="esm-Cz-iRG" id="4Hv-EO-qyy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvZ-LX-NFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851" y="1057"/>
+            <point key="canvasLocation" x="2850.5" y="1056.5"/>
         </scene>
         <!--67475-->
         <scene sceneID="13g-Fn-RLZ">
