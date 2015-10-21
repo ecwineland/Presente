@@ -269,10 +269,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucf-KP-5VY">
-                                <rect key="frame" x="129" y="344" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="54" y="351" width="46" height="30"/>
+                                <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startStopMonitoring:" destination="AF1-Cc-Jb0" eventType="touchUpInside" id="r4x-e0-2do"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2He-Ue-Kwa">
+                                <rect key="frame" x="210" y="351" width="46" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopMonitoring:" destination="AF1-Cc-Jb0" eventType="touchUpInside" id="XLR-4v-IOo"/>
                                 </connections>
                             </button>
                         </subviews>

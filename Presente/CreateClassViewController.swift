@@ -15,6 +15,8 @@ class CreateClassViewController: UIViewController, ESTBeaconManagerDelegate {
     @IBOutlet var clssDesc: UITextField!
     
     let beaconManager = ESTBeaconManager()
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +37,18 @@ class CreateClassViewController: UIViewController, ESTBeaconManagerDelegate {
     }
     
     
-    @IBAction func startStopMonitoring(sender: AnyObject) {
+    @IBAction func startMonitoring(sender: AnyObject) {
         
+        appDelegate.startMonitoring()
         
     }
+    
+    @IBAction func stopMonitoring(sender: AnyObject) {
+        
+        appDelegate.stopMonitoring()
+        
+    }
+    
     
     @IBAction func createClass(sender: AnyObject) {
         
