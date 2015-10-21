@@ -8,13 +8,11 @@
 
 import UIKit
 
-class CreateClassViewController: UIViewController, ESTBeaconManagerDelegate {
+class CreateClassViewController: UIViewController {
     
     @IBOutlet var clssName: UITextField!
     @IBOutlet var clssNum: UITextField!
     @IBOutlet var clssDesc: UITextField!
-    
-    let beaconManager = ESTBeaconManager()
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
