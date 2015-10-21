@@ -36,8 +36,8 @@ class CustomLogInViewController: UIViewController {
         loginButton.layer.cornerRadius = cornerRadiusVal
         
         signUpButton.backgroundColor = UIColor.clearColor()
-        signUpButton.layer.borderWidth = 2.0
-        signUpButton.layer.borderColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1).CGColor
+        signUpButton.layer.borderWidth = 1.0
+        signUpButton.layer.borderColor = UIColor(red: (255/255.0), green:(206/255.0), blue:(52/255.0), alpha: 1).CGColor
         signUpButton.layer.cornerRadius = cornerRadiusVal
         
         passwordField.secureTextEntry = true

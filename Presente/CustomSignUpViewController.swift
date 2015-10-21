@@ -11,23 +11,41 @@ import Parse
 import ParseUI
 
 class CustomSignUpViewController: UIViewController {
-
+    
+    @IBOutlet var iAmLabel: UILabel!
+    @IBOutlet var userRoleSegControl: UISegmentedControl!
+    
+    @IBOutlet var firstNameField: UITextField!
+    @IBOutlet var lastNameField: UITextField!
     @IBOutlet var emailField: UITextField!
-    @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet var confirmPasswordField: UITextField!
+    
     @IBOutlet var signUpButton: UIButton!
+    
     
     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
     
     override func viewDidLoad() {
+        // Initially set userRoleSegControl to 0 = "student"
+        self.userRoleSegControl.selectedSegmentIndex = 0
+        
         super.viewDidLoad()
 
         // Customization for the view
         let cornerRadiusVal: CGFloat = 5.0
         self.view.backgroundColor = UIColor(red: (52/255.0), green:(57/255.0), blue:(56/255.0), alpha: 1)
         
-        signUpButton.backgroundColor = UIColor(red: (114/255.0), green:(191/255.0), blue:(91/255.0), alpha: 1)
+        iAmLabel.textColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1)
+        
+        signUpButton.backgroundColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
         signUpButton.layer.cornerRadius = cornerRadiusVal
+        
+        userRoleSegControl.layer.borderColor = UIColor(red: (235/255.0), green:(231/255.0), blue:(221/255.0), alpha: 1).CGColor
+        userRoleSegControl.tintColor = UIColor(red: (30/255.0), green:(170/255.0), blue:(226/255.0), alpha: 1)
+        
+        passwordField.secureTextEntry = true
+        confirmPasswordField.secureTextEntry = true
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
@@ -56,29 +74,74 @@ class CustomSignUpViewController: UIViewController {
 
     @IBAction func signUpAction(sender: AnyObject) {
         
-        let username = self.usernameField.text!
+        var target:String = ""
+        let firstname = self.firstNameField.text!
+        let lastname = self.lastNameField.text!
+        let username = self.emailField.text!
         let password = self.passwordField.text!
-        let email = self.emailField.text!
+        let confirmPassword = self.confirmPasswordField.text!
+        var role:String = ""
         
-        // Check for minimum username and password length
-        if (username.characters.count < 4 || password.characters.count < 5) {
-            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
+        // Set role variable by checking segmented control index
+        if (userRoleSegControl.selectedSegmentIndex == 0) {
+            role = "Student"
+        }
+        if (userRoleSegControl.selectedSegmentIndex == 1) {
+            role = "Professor"
+        }
+        
+        var errors:[String] = []
+        
+        // Validate that first name is not empty
+        if (firstname == "") {
+            errors += ["First name cannot be empty!"]
+        }
+        // Validate that last name is not empty
+        if (lastname == "") {
+            errors += ["Last name cannot be empty!"]
+        }
+        
+        // Validate email using regex
+        let emailvalidator = EmailValidation()
+        var (result, errorType) = emailvalidator.validate(username)
+        if (result == false) {
+            errors += ["Email is not valid!"]
+        }
+        
+        // Validate length and format of password
+        // Validate that confirmPassword and password are equal
+        if (confirmPassword == password) {
+            let passwordvalidator = PasswordValidation()
+            var (result, errorType) = passwordvalidator.validate(password)
+            if (result == false) {
+                errors += ["Password must be 8 characters and contain one uppercase!"]
+            }
+        }
+        else {
+            errors += ["Passwords do not match!"]
+        }
+        
+        
+        if (!errors.isEmpty) {
+            var m = ""
+            if errors.count >= 2
+            {
+                for index in 0...(errors.count-2)
+                {
+                    m += errors[index] + "\n"
+                }
+            }
+            m += errors[errors.count-1]
+            
+            let alertController: UIAlertController = UIAlertController(title: m, message: "", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(defaultAction)
             
             presentViewController(alertController, animated: true, completion: nil)
-        
-        // Check for minimum email length
-        } else if (email.characters.count < 8) {
-            
-            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Surely your email must be longer than that!", preferredStyle: .Alert) // Figure out a real error message later
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            presentViewController(alertController, animated: true, completion: nil)
-        
-        // User will be created
-        } else {
+        }
+          
+        // If validations are all OK, new User will be created
+        else {
             
             self.actInd.startAnimating()
             
@@ -86,28 +149,50 @@ class CustomSignUpViewController: UIViewController {
             
             newUser.username = username
             newUser.password = password
-            newUser.email = email
+            newUser.setValue(lastname, forKey: "lastName")
+            newUser.setValue(firstname, forKey: "firstName")
+            newUser.setValue(role, forKey: "role")
             
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                 
                 self.actInd.stopAnimating()
                 
-                // If error returned
-                if (error != nil) {
+                if (target == "Student") {
+                    let newStudent = PFObject(className: "Student")
+                    newStudent.setValue(lastname, forKey: "lastName")
+                    newStudent.setValue(firstname, forKey: "firstName")
+                    newStudent.setObject(newUser, forKey: "userID")
+            
+                    newStudent.saveInBackgroundWithBlock({
+                        (succeeded, error) -> Void in
+                        if error == nil {
+                            self.performSegueWithIdentifier("toClasses", sender: sender)
+                            return;
+                        }
+                        else {
+                            // Failed to create new Student!
+                        }
+                    })
+                    return
+                }
                     
-                    let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert) // TODO: Is this how to interpolate the error message?
-                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    alertController.addAction(defaultAction)
+                if (target == "Professor") {
+                    let newProfessor = PFObject(className: "Professor")
+                    newProfessor.setValue(lastname, forKey: "lastName")
+                    newProfessor.setValue(firstname, forKey: "firstName")
+                    newProfessor.setObject(newUser, forKey: "userID")
                     
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                    
-                // Sign in is successful
-                } else {
-                    // Signed in alert
-                    let alertController : UIAlertController = UIAlertController(title: "Signed Up", message: "User created", preferredStyle: .Alert) 
-                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
+                    newProfessor.saveInBackgroundWithBlock({
+                        (succeeded, error) -> Void in
+                        if error == nil {
+                            self.performSegueWithIdentifier("toClasses", sender: sender)
+                            return;
+                        }
+                        else {
+                            // Failed to create new Professor!
+                        }
+                    })
+                    return
                 }
                 
             })

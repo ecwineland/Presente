@@ -94,8 +94,10 @@ class ClassesTableViewController: UITableViewController {
         
         let currClass = classes[indexPath.row]
         let currClassName = currClass["Name"] as! String
+        let currClassNum = currClass["Num"] as! String
         
-        cell.className.text = currClassName
+        cell.textLabel?.text = currClassNum
+        cell.detailTextLabel?.text = currClassName
         
         return cell
     }
@@ -136,14 +138,21 @@ class ClassesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//        if (segue.identifier == "toClassDatesView") {
+//            let vc = segue.destinationViewController as! ClassDatesTableViewController
+//            
+//            let currClass = classes[indexPath.row]
+//            let currClassNum = currClass["Num"] as! String
+//            vc.classNum =
+//        }
+//    }
+
 
 }
