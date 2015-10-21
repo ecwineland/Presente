@@ -14,9 +14,13 @@ class CustomSignUpViewController: UIViewController {
     
     @IBOutlet var iAmLabel: UILabel!
     @IBOutlet var userRoleSegControl: UISegmentedControl!
+    
+    @IBOutlet var firstNameField: UITextField!
+    @IBOutlet var lastNameField: UITextField!
     @IBOutlet var emailField: UITextField!
-    @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet var confirmPasswordField: UITextField!
+    
     @IBOutlet var signUpButton: UIButton!
     
     
@@ -64,29 +68,79 @@ class CustomSignUpViewController: UIViewController {
 
     @IBAction func signUpAction(sender: AnyObject) {
         
-        let username = self.usernameField.text!
+        let firstname = self.firstNameField.text!
+        let lastname = self.lastNameField.text!
+        let username = self.emailField.text!
         let password = self.passwordField.text!
-        let email = self.emailField.text!
+        let confirmPassword = self.confirmPasswordField.text!
         
-        // Check for minimum username and password length
-        if (username.characters.count < 4 || password.characters.count < 5) {
-            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
+        var errors:[String] = []
+        
+        // Sign up view text field validations
+        if (firstname == "") {
+            errors += ["First name cannot be empty!"]
+        }
+        if (lastname == "") {
+            errors += ["Last name cannot be empty!"]
+        }
+            
+        var emailvalidator = EmailValidation()
+        var (result, errorType) = emailvalidator.validate(username)
+        if (result == false) {
+            errors += ["Email is not valid!"]
+        }
+        
+        if (confirmPassword == password) {
+            var passwordvalidator = PasswordValidation()
+            var (result, errorType) = passwordvalidator.validate(password)
+            if (result == false) {
+                errors += ["Password must be 8 characters and contain one uppercase!"]
+            }
+        }
+        else {
+            errors += ["Passwords do not match!"]
+        }
+        
+        
+        if (!errors.isEmpty) {
+            var m = ""
+            if errors.count >= 2
+            {
+                for index in 0...(errors.count-2)
+                {
+                    m += errors[index] + "\n"
+                }
+            }
+            m += errors[errors.count-1]
+            
+            let alertController: UIAlertController = UIAlertController(title: m, message: "", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(defaultAction)
             
             presentViewController(alertController, animated: true, completion: nil)
+        }
         
-        // Check for minimum email length
-        } else if (email.characters.count < 8) {
-            
-            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Surely your email must be longer than that!", preferredStyle: .Alert) // Figure out a real error message later
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            presentViewController(alertController, animated: true, completion: nil)
         
-        // User will be created
-        } else {
+//        // Check for minimum username and password length
+//        if (username.characters.count < 4 || password.characters.count < 5) {
+//            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Username and password must have at least 4, 5 characters respectively", preferredStyle: .Alert)
+//            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            
+//            presentViewController(alertController, animated: true, completion: nil)
+//        
+//        // Check for minimum email length
+//        } else if (email.characters.count < 8) {
+//            
+//            let alertController : UIAlertController = UIAlertController(title: "Invalid", message: "Surely your email must be longer than that!", preferredStyle: .Alert) // Figure out a real error message later
+//            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            
+//            presentViewController(alertController, animated: true, completion: nil)
+        
+        
+        // If validations are all OK, new User will be created
+        else {
             
             self.actInd.startAnimating()
             
@@ -94,7 +148,6 @@ class CustomSignUpViewController: UIViewController {
             
             newUser.username = username
             newUser.password = password
-            newUser.email = email
             
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                 

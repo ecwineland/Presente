@@ -191,8 +191,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="94h-hg-pEV"/>
                     <connections>
+                        <outlet property="confirmPasswordField" destination="mqI-4p-jj0" id="9dV-Wo-Xbo"/>
                         <outlet property="emailField" destination="zJB-M2-xlh" id="JZa-xJ-FiR"/>
+                        <outlet property="firstNameField" destination="cr2-EC-MQR" id="a5j-rZ-kYe"/>
                         <outlet property="iAmLabel" destination="tTh-XM-wls" id="qcC-mc-gjq"/>
+                        <outlet property="lastNameField" destination="O2l-z9-ulU" id="VQU-85-K5U"/>
                         <outlet property="passwordField" destination="nDl-TX-lYL" id="cPN-h7-NlT"/>
                         <outlet property="signUpButton" destination="98V-p7-RCk" id="LnW-Zg-6fd"/>
                         <outlet property="userRoleSegControl" destination="swo-aJ-Svq" id="zKJ-It-j1D"/>
