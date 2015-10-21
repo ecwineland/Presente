@@ -13,9 +13,15 @@ class ClassSessionViewController: UIViewController {
     @IBOutlet var presentButton: UIButton!
     @IBOutlet var absentButton: UIButton!
     
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
+    
     @IBOutlet weak var circleGraph: CircleGraphView!
     @IBOutlet weak var numStudentsLabel: UILabel!
     @IBOutlet weak var numTextLabel: UILabel!
+    
+    // For start and stop recording
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,18 @@ class ClassSessionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Start, stop monitoring with beacon
+    @IBAction func startMonitoring(sender: AnyObject) {
+        
+        appDelegate.startMonitoring()
+        
+    }
+    
+    @IBAction func stopMonitoring(sender: AnyObject) {
+        
+        appDelegate.stopMonitoring()
+        
+    }
 
     /*
     // MARK: - Navigation

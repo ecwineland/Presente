@@ -2,6 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="piD-nX-uyE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -215,7 +218,7 @@
                         <animations/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ClassesTableViewCell" textLabel="8Kd-fh-d0P" detailTextLabel="HxP-gv-aMn" style="IBUITableViewCellStyleSubtitle" id="Ufd-wi-GEo" customClass="ClassesTableViewCell" customModule="Presente" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ufd-wi-GEo" id="mIg-re-Ndy">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -296,8 +299,8 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esm-Cz-iRG">
-                                <rect key="frame" x="37" y="575" width="140" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esm-Cz-iRG">
+                                <rect key="frame" x="37" y="494" width="140" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
@@ -305,8 +308,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4s-P5-UsG">
-                                <rect key="frame" x="197" y="575" width="140" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4s-P5-UsG">
+                                <rect key="frame" x="197" y="494" width="140" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
@@ -314,11 +317,51 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4k-5I-FWA">
+                                <rect key="frame" x="37" y="554" width="140" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="XsG-PH-7ps"/>
+                                    <constraint firstAttribute="height" constant="40" id="wGr-vU-awj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Start Monitoring">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startMonitoring:" destination="nKP-es-fhk" eventType="touchUpInside" id="4by-ls-eHD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRb-YB-BB2">
+                                <rect key="frame" x="197" y="554" width="140" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Stop Monitoring">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopMonitoring:" destination="nKP-es-fhk" eventType="touchUpInside" id="D7c-wI-iQ9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="top" secondItem="cRb-YB-BB2" secondAttribute="top" id="5em-nR-qOe"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="baseline" secondItem="G4k-5I-FWA" secondAttribute="firstBaseline" id="7hR-1G-d5l"/>
+                            <constraint firstItem="MoV-lK-08s" firstAttribute="top" secondItem="G4k-5I-FWA" secondAttribute="bottom" constant="73" id="BHT-w6-nWY"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="leading" secondItem="1zE-Ud-NTI" secondAttribute="leading" id="J8V-84-c6Y"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="trailing" secondItem="1zE-Ud-NTI" secondAttribute="trailing" id="K21-UI-3sM"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="leading" secondItem="esm-Cz-iRG" secondAttribute="leading" id="O4u-sc-Jha"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="trailing" secondItem="esm-Cz-iRG" secondAttribute="trailing" id="VYT-zt-PNA"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="baseline" secondItem="cRb-YB-BB2" secondAttribute="firstBaseline" id="aFT-r5-M5g"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="leading" secondItem="Y2c-Eq-3E5" secondAttribute="leadingMargin" constant="21" id="cnP-d6-PZb"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="trailing" secondItem="H4s-P5-UsG" secondAttribute="trailing" id="g73-VX-cQU"/>
+                            <constraint firstItem="G4k-5I-FWA" firstAttribute="top" secondItem="esm-Cz-iRG" secondAttribute="bottom" constant="20" id="mxg-wB-LOh"/>
                             <constraint firstItem="1zE-Ud-NTI" firstAttribute="centerX" secondItem="Y2c-Eq-3E5" secondAttribute="centerX" id="ujt-1r-jqi"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="top" secondItem="H4s-P5-UsG" secondAttribute="bottom" constant="20" id="uou-em-Exf"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="leading" secondItem="H4s-P5-UsG" secondAttribute="leading" id="wPl-0F-lUS"/>
+                            <constraint firstItem="cRb-YB-BB2" firstAttribute="leading" secondItem="G4k-5I-FWA" secondAttribute="trailing" constant="20" id="zcm-w8-2ST"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tuesday, October 13th" id="ipw-76-HhX"/>
@@ -329,6 +372,8 @@
                         <outlet property="numStudentsLabel" destination="tYe-hq-0cP" id="wwf-VO-1V3"/>
                         <outlet property="numTextLabel" destination="Ez0-v9-FVZ" id="R8M-6F-WRz"/>
                         <outlet property="presentButton" destination="esm-Cz-iRG" id="4Hv-EO-qyy"/>
+                        <outlet property="startButton" destination="G4k-5I-FWA" id="kPB-cx-ve8"/>
+                        <outlet property="stopButton" destination="cRb-YB-BB2" id="AmM-aF-6lH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvZ-LX-NFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,7 +392,7 @@
                             <tableViewSection headerTitle="Today" id="U6X-MX-GIt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0np-oy-B0S" style="IBUITableViewCellStyleDefault" id="PzC-VS-hYC">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PzC-VS-hYC" id="77a-1Q-tjV">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -374,7 +419,7 @@
                             <tableViewSection headerTitle="Previous Class Sessions" id="nEL-m8-Heu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="btr-dh-d3x" style="IBUITableViewCellStyleDefault" id="kJ3-1l-RiZ">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJ3-1l-RiZ" id="E0G-YY-JB5">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -394,7 +439,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fTh-e4-3kC" style="IBUITableViewCellStyleDefault" id="Kw1-Mn-hsy">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kw1-Mn-hsy" id="o3y-f0-UIZ">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -414,7 +459,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rBS-L1-ga5" style="IBUITableViewCellStyleDefault" id="5iT-cj-8wv">
-                                        <rect key="frame" x="0.0" y="252" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="188" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5iT-cj-8wv" id="c8G-vH-bIv">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -434,7 +479,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wt8-3z-N3Z" style="IBUITableViewCellStyleDefault" id="49l-gy-GVG">
-                                        <rect key="frame" x="0.0" y="296" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="232" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="49l-gy-GVG" id="kXq-sv-ZkB">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -454,7 +499,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="sL7-g1-7Y6" style="IBUITableViewCellStyleDefault" id="AXe-vo-d8K">
-                                        <rect key="frame" x="0.0" y="340" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="276" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AXe-vo-d8K" id="Irk-BY-Qm3">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -520,20 +565,6 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucf-KP-5VY">
-                                <rect key="frame" x="54" y="351" width="46" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startMonitoring:" destination="AF1-Cc-Jb0" eventType="touchUpInside" id="IYm-az-nMI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2He-Ue-Kwa">
-                                <rect key="frame" x="210" y="351" width="46" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopMonitoring:" destination="AF1-Cc-Jb0" eventType="touchUpInside" id="XLR-4v-IOo"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -607,6 +638,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bzc-My-Te7"/>
+        <segue reference="Zou-Kh-ImC"/>
     </inferredMetricsTieBreakers>
 </document>

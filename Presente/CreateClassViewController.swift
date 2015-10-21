@@ -14,7 +14,6 @@ class CreateClassViewController: UIViewController {
     @IBOutlet var clssNum: UITextField!
     @IBOutlet var clssDesc: UITextField!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +30,6 @@ class CreateClassViewController: UIViewController {
     @IBAction func cancel(sender: AnyObject) {
         
         self.performSegueWithIdentifier("backToClasses", sender: self)
-        
-    }
-    
-    
-    @IBAction func startMonitoring(sender: AnyObject) {
-        
-        appDelegate.startMonitoring()
-        
-    }
-    
-    @IBAction func stopMonitoring(sender: AnyObject) {
-        
-        appDelegate.stopMonitoring()
         
     }
     
